@@ -16,6 +16,8 @@
 
     already configered for publishing to azure
 
+    `start point: ***.***.***/api/teachercookies`
+
     ### `remember to set the CSOR policy in app service setting`
 
 - ### payloads.js
@@ -30,8 +32,8 @@
 
 
 - RoadMap
-    - improve the inmemory database to delete the expired cookie automatically.
-    - add admin page for managering cookie itemes stored on server better.
+    - improve the inmemory database to delete the expired cookie automatically. [ important ]
+    - add admin page for managering cookie itemes stored on server better. [ important ]
     - embed js code into api project itself.
 
 

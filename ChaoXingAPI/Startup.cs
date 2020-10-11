@@ -23,6 +23,7 @@ namespace ChaoXingAPI
 {
     public class Startup
     {
+        public static long EXPIREDAYS = 30; //set the time cookies exist
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

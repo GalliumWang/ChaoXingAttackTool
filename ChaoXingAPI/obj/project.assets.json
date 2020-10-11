@@ -8955,11 +8955,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Learning_Code\\Net Core\\ChaoXingAPI\\ChaoXingAPI.csproj",
+      "projectUniqueName": "F:\\code\\Project\\ChaoXingAAttackTool\\ChaoXingAPI\\ChaoXingAPI.csproj",
       "projectName": "ChaoXingAPI",
-      "projectPath": "F:\\Learning_Code\\Net Core\\ChaoXingAPI\\ChaoXingAPI.csproj",
+      "projectPath": "F:\\code\\Project\\ChaoXingAAttackTool\\ChaoXingAPI\\ChaoXingAPI.csproj",
       "packagesPath": "C:\\Users\\26340\\.nuget\\packages\\",
-      "outputPath": "F:\\Learning_Code\\Net Core\\ChaoXingAPI\\obj\\",
+      "outputPath": "F:\\code\\Project\\ChaoXingAAttackTool\\ChaoXingAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

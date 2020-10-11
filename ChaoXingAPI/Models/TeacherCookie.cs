@@ -11,5 +11,6 @@ namespace ChaoXingAPI.Models
         public string Name { get; set; }
         public string Cookie { get; set; }
         public string Time { get; set; }
+        public long ExpireCount { get; set; }
     }
 }

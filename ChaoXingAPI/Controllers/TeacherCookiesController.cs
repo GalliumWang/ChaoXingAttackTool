@@ -10,7 +10,6 @@ using ChaoXingAPI.Models;
 namespace ChaoXingAPI.Controllers
 {
     [Route("api/[controller]")]
-    //[Route("/")]
     [ApiController]
     public class TeacherCookiesController : ControllerBase
     {
@@ -23,16 +22,16 @@ namespace ChaoXingAPI.Controllers
 
         // GET: api/TeacherCookies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TeacherCookie>>> GetTodoItems()
+        public async Task<ActionResult<IEnumerable<TeacherCookie>>> GetTeacherCookies()
         {
-            return await _context.TodoItems.ToListAsync();
+            return await _context.TeacherCookies.ToListAsync();
         }
 
         // GET: api/TeacherCookies/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TeacherCookie>> GetTeacherCookie(long id)
         {
-            var teacherCookie = await _context.TodoItems.FindAsync(id);
+            var teacherCookie = await _context.TeacherCookies.FindAsync(id);
 
             if (teacherCookie == null)
             {
@@ -80,24 +79,39 @@ namespace ChaoXingAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<TeacherCookie>> PostTeacherCookie(TeacherCookie teacherCookie)
         {
-            _context.TodoItems.Add(teacherCookie);
+
+            //delete cookies added a month ago
+            long tempCount = teacherCookie.ExpireCount;
+
+            var widgets = _context.TeacherCookies.Where(w => tempCount-w.ExpireCount >= 3600*24* Startup.EXPIREDAYS);
+
+            foreach (TeacherCookie widget in widgets)
+            {
+                _context.TeacherCookies.Remove(widget);
+            }
+
+
+
+
+            _context.TeacherCookies.Add(teacherCookie);
+
+
             await _context.SaveChangesAsync();
 
-            //return CreatedAtAction("GetTeacherCookie", new { id = teacherCookie.Id }, teacherCookie);
-            return CreatedAtAction(nameof(GetTeacherCookie), new { id = teacherCookie.Id }, teacherCookie);
+            return CreatedAtAction("GetTeacherCookie", new { id = teacherCookie.Id }, teacherCookie);
         }
 
         // DELETE: api/TeacherCookies/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<TeacherCookie>> DeleteTeacherCookie(long id)
         {
-            var teacherCookie = await _context.TodoItems.FindAsync(id);
+            var teacherCookie = await _context.TeacherCookies.FindAsync(id);
             if (teacherCookie == null)
             {
                 return NotFound();
             }
 
-            _context.TodoItems.Remove(teacherCookie);
+            _context.TeacherCookies.Remove(teacherCookie);
             await _context.SaveChangesAsync();
 
             return teacherCookie;
@@ -105,7 +119,7 @@ namespace ChaoXingAPI.Controllers
 
         private bool TeacherCookieExists(long id)
         {
-            return _context.TodoItems.Any(e => e.Id == id);
+            return _context.TeacherCookies.Any(e => e.Id == id);
         }
     }
 }

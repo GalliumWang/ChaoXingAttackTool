@@ -14,6 +14,6 @@ namespace ChaoXingAPI.Models
         {
         }
 
-        public DbSet<TeacherCookie> TodoItems { get; set; }
+        public DbSet<TeacherCookie> TeacherCookies { get; set; }
     }
 }

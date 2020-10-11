@@ -33,8 +33,10 @@
 
 - RoadMap
     - add admin page for managering cookie itemes stored on server better. [ important ]
-    - embed js code into api project it
+    - 
+    - embed js code into api project it [ alternative ]
     - improve the inmemory database to delete the expired cookie automatically. [ archived,it's impossible ]
+    - auto delete the cookies added a month ago. [ completed ]
 
 
 - Tips

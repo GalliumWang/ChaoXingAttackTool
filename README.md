@@ -43,3 +43,8 @@
   
   Js code can be hosted on server and inject one line of code below to simplify the process.
   - ```<script src="https://www.***.***/***.js"></script>```
+
+
+
+# UPDATE 20/12/2
+    ! BUG FIXED
